@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: simple-go-web-server
+  name: simple-go-web-server
+  namespace: demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: simple-go-web-server
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: simple-go-web-server
+    spec:
+      containers:
+      - image: localhost:5005/simple-go-web-server:latest
+        name: simple-go-web-server
+        resources: {}
+status: {}
