@@ -19,3 +19,11 @@ build-image:
 	docker tag ${IMG} ${REGISTRY}/${IMG} && \
     docker push  ${REGISTRY}/${IMG}
 
+
+.PHONY: kapp-deploy-to-cluster
+kapp-deploy-to-cluster:
+	kapp deploy -n demo -a simple-go-web-server -f config -y
+
+.PHONY: kapp-delete-from-cluster
+kapp-delete-from-cluster:
+	kapp delete -n demo -a simple-go-web-server -y

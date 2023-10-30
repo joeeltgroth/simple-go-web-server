@@ -22,5 +22,13 @@ k -n demo get service simple-go-web-server -oyaml > config/service.yaml
 ### Deploying / undeploying
 ```
 kapp deploy -n demo -a simple-go-web-server -f config -y
-kapp delete -n demo -a simple-go-web-server
+kapp delete -n demo -a simple-go-web-server -y
 ```
+
+### Port-forward the service
+```
+k -n demo port-forward services/simple-go-web-server 8080:8081
+```
+
+
+
