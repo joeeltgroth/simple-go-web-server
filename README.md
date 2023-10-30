@@ -31,4 +31,10 @@ k -n demo port-forward services/simple-go-web-server 8080:8081
 ```
 
 
+### Install kapp-controller and the kctrl cli
+```
+kapp deploy -a kc -f https://github.com/carvel-dev/kapp-controller/releases/latest/download/release.yml
 
+brew tap carvel-dev/carvel
+brew install kctrl   # https://carvel.dev/kapp-controller/docs/develop/install/#installing-kapp-controller-cli-kctrl
+```
